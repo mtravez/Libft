@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 15:49:59 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/13 15:01:26 by mtravez          ###   ########.fr       */
+/*   Created: 2022/10/13 12:59:08 by mtravez           #+#    #+#             */
+/*   Updated: 2022/10/14 17:51:25 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strlen(char *s)
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (*s != '\0')
+	j = 0;
+	while (dst[j] != '\0')
+	{
+		j++;
+	}
+	while ((i < dstsize - 1) || (src[i] != '\0'))
 	{
 		i++;
-		s++;
+		j++;
 	}
-	return (i);
+	return (j);
 }
