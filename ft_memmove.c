@@ -6,32 +6,32 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:32:36 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/14 17:47:57 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/15 18:32:15 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dst, const void *src, int len)
 {
 	char	*source;
 	char	*destiny;
-	char	*temp;
 	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
+	i = len - 1;
 	source = (char *) src;
 	destiny = (char *) dst;
-	temp = 0;
-	while (i < len)
+	if (dst == 0 && src == 0)
+		return (0);
+	if (destiny < source || destiny > source + len)
+		return (ft_memcpy(dst, src, len));
+	else
 	{
-		temp[i] = source[i];
-		i++;
-	}
-	while (j < len)
-	{
-		destiny[j] = temp[j];
-		j++;
+		while (i >= 0)
+		{
+			destiny[i] = source[i];
+			i--;
+		}
 	}
 	return (dst);
 }

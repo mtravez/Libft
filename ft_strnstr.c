@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:01:53 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/14 17:52:52 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/15 18:51:01 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_word(char *haystack, char *needle, int pos, int len)
 }
 
 //This function finds a string inside another string
-char	*ft_strnstr(const char *haystack, const char *needle, unsigned int len)
+char	*ft_strnstr(const char *haystack, const char *needle, unsigned long len)
 {
 	char	*h;
 	char	*n;

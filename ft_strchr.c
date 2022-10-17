@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 15:10:41 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/14 17:49:27 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/15 16:23:04 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
+	if (s[i] == (char) c)
+		return ((char *)&s[i]);
 	return (0);
 }
