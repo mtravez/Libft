@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 15:49:59 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/17 15:53:29 by mtravez          ###   ########.fr       */
+/*   Created: 2022/10/17 11:37:18 by mtravez           #+#    #+#             */
+/*   Updated: 2022/10/17 15:30:19 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-//This function returns the size of the given string
-int	ft_strlen(const char *s)
+//This function duplicates a string into a new memory bank and returns
+//its pointer
+char	*ft_strdup(const char *s1)
 {
-	int	i;
+	char	*cpy;
+	size_t	strsize;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	strsize = ft_strlen(s1) + 1;
+	cpy = malloc(strsize);
+	if (!cpy)
+		return (0);
+	ft_memcpy(cpy, s1, strsize);
+	return (cpy);
 }

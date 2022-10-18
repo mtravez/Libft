@@ -6,12 +6,15 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:32:36 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 18:32:15 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:17:42 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This function is sympilar to ft_memcpy, but it behaves 
+//more cautiously when both pointers overlap, copying the src into dst
+//starting at the end
 void	*ft_memmove(void *dst, const void *src, int len)
 {
 	char	*source;

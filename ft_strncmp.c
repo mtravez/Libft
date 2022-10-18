@@ -6,22 +6,24 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 14:48:09 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 18:44:36 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/18 16:32:01 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
+//This function compares two strings and returns the difference between
+//the first two non matching characters
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	i;
+	int				i;
 	unsigned char	*temps1;
 	unsigned char	*temps2;
 
 	i = 0;
 	temps1 = (unsigned char *) s1;
 	temps2 = (unsigned char *) s2;
-	while (i < n)
+	while ((size_t)i < n)
 	{
 		if (temps1[i] != temps2[i])
 		{

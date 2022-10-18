@@ -6,12 +6,14 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:01:53 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 18:51:01 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:59:22 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This static function exists to needle in haystack only from the 
+//pos index
 int	check_word(char *haystack, char *needle, int pos, int len)
 {
 	int	j;
@@ -29,7 +31,7 @@ int	check_word(char *haystack, char *needle, int pos, int len)
 }
 
 //This function finds a string inside another string
-char	*ft_strnstr(const char *haystack, const char *needle, unsigned long len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*h;
 	char	*n;

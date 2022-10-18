@@ -6,12 +6,13 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:19:46 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 18:32:09 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:18:31 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This function fills a pointer with len bytes of c
 void	*ft_memset(void *b, int c, int len)
 {
 	char	*d;

@@ -6,12 +6,13 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 17:05:54 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 17:54:56 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:15:57 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This function copies up to n bytes of array src into array dst
 void	*ft_memcpy(void *dst, const void *src, int n)
 {
 	char	*source;

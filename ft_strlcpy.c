@@ -6,13 +6,14 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 11:52:39 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/15 14:53:40 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:52:38 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_strlcpy(char *dst, const char *src, unsigned int dstsize)
+//This function copies dstsize - 1 bytes from src to dst
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
 	unsigned int	j;

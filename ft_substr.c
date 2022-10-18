@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 15:49:59 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/17 15:53:29 by mtravez          ###   ########.fr       */
+/*   Created: 2022/10/17 11:59:45 by mtravez           #+#    #+#             */
+/*   Updated: 2022/10/18 16:34:35 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-//This function returns the size of the given string
-int	ft_strlen(const char *s)
+//This function creates a new string from the string s from the index start
+//and then returns the pointer
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*sub;
+	size_t	size;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	size = ft_strlen(s);
+	if (len > size)
+		len = size;
+	if (start > size)
+		start = size;
+	sub = malloc(len + 1);
+	if (!sub)
+		return (0);
+	ft_memcpy(sub, &s[start], len);
+	sub[len] = '\0';
+	return (sub);
 }

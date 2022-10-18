@@ -6,10 +6,13 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:55:27 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/11 17:05:18 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:03:21 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+//This function fills a pointer with n bytes of null
 void	ft_bzero(void *s, int n)
 {
 	char	*t;

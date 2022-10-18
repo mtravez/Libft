@@ -6,13 +6,15 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 15:24:29 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/14 17:45:23 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/17 15:38:27 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned int n)
+//This function compares two pointers of each n bytes and returns
+//the difference between the first discrepating character
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	int				i;
 	unsigned char	*temps1;
