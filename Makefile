@@ -6,7 +6,7 @@
 #    By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 18:55:02 by mtravez           #+#    #+#              #
-#    Updated: 2022/10/18 16:29:47 by mtravez          ###   ########.fr        #
+#    Updated: 2022/10/18 19:57:48 by mtravez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,14 @@ SRC=ft_atoi.c		\
 	ft_substr.c		\
 	ft_strjoin.c	\
 	ft_strtrim.c	\
-	ft_split.c
+	ft_split.c		\
+	ft_itoa.c		\
+	ft_strmapi.c	\
+	ft_striteri.c	\
+	ft_putchar_fd.c	\
+	ft_putstr_fd.c	\
+	ft_putendl_fd.c	\
+	ft_putnbr_fd.c
 
 all: $(NAME)
 	@echo "Making a..out"
