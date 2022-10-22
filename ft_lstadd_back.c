@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/13 12:59:08 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/22 16:51:05 by mtravez          ###   ########.fr       */
+/*   Created: 2022/10/22 19:02:01 by mtravez           #+#    #+#             */
+/*   Updated: 2022/10/22 19:11:40 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//This function concatenates the src string into the end of the dst string
-//and returns the final size of dst
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	t_list	*current;
 
-	i = 0;
-	j = 0;
-	while (i < dstsize && dst[i] != '\0')
-		i++;
-	if (i == dstsize)
-		return (i + ft_strlen(src));
-	k = i;
-	while (src[j] != 0)
+	current = *lst;
+	if (!current)
+		*lst = new;
+	else
 	{
-		if (i < dstsize - 1)
+		while (current->next)
 		{
-			dst[k] = src[j];
-			k++;
+			current = current->next;
 		}
-		i++;
-		j++;
+		current->next = new;
 	}
-	dst[k] = '\0';
-	return (i);
 }

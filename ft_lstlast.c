@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 19:08:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/19 17:56:37 by mtravez          ###   ########.fr       */
+/*   Created: 2022/10/22 18:43:05 by mtravez           #+#    #+#             */
+/*   Updated: 2022/10/22 19:11:47 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-//This function allocates enough space for count number of
-//objects of each size bytes of memory. It then fills the bytes 
-//with zero and returns a pointer to the allocated memory.
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstlast(t_list *lst)
 {
-	void	*mem;
-
-	if (count * size == 0)
+	if (!lst)
+		return (lst);
+	while (lst->next)
 	{
-		count = 1;
-		size = 1;
+		lst = lst->next;
 	}
-	mem = malloc(size * count);
-	if (!mem)
-		return (0);
-	ft_bzero(mem, count * size);
-	return (mem);
+	return (lst);
 }

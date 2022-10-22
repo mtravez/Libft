@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:11:22 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/18 19:00:08 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/22 16:52:24 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))
 {
 	char	*str;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	str = malloc((ft_strlen(s) * sizeof(char)) + 1);
