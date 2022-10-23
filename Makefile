@@ -6,7 +6,7 @@
 #    By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 18:55:02 by mtravez           #+#    #+#              #
-#    Updated: 2022/10/23 18:33:05 by mtravez          ###   ########.fr        #
+#    Updated: 2022/10/23 19:22:21 by mtravez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ fclean: clean
 	@rm -f $(NAME) a.out
 
 re: fclean all
+
 bonus:
 	@gcc -c $(BONUS) $(FLAGS)
 	@ar rc $(NAME) *.o
