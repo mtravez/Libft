@@ -6,14 +6,13 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:46:12 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/17 19:38:37 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:03:15 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
+//This function returns whether or not the given char is in the given set
 static int	isinset(char const *set, char c)
 {
 	int	i;

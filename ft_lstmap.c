@@ -6,19 +6,21 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:58:56 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/22 21:57:07 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:35:32 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
+//This function iterates the function f in the content of every node 
+//in the list creating a new list with the modified contents. It uses
+//del to delete the nodes when necessary
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*current;
 	t_list	*new;
 	t_list	*head;
-	
+
 	if (!lst)
 		return (NULL);
 	current = ft_lstnew(f(lst->content));
@@ -34,11 +36,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		else
-		{
-			current->next = new;
-			current = current->next;
-		}
+		current->next = new;
+		current = current->next;
 	}
 	return (head);
 }

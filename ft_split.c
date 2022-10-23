@@ -6,13 +6,11 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:38:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/18 16:44:31 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:00:37 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 //This function skips all c characters dirctly after s[index] and returns
 //the first index where s[index] is not c. It also returns the same index if
@@ -71,7 +69,7 @@ char	**ft_split(char const *s, char c)
 
 	arrarr = malloc((ft_how_many_elements(s, c) + 1) * sizeof(char *));
 	if (!arrarr)
-		return (0);
+		return (NULL);
 	i = ft_skip_chars(s, c, 0);
 	j = i;
 	k = 0;

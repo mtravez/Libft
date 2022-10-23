@@ -6,13 +6,14 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:12:15 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/22 19:59:30 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:06:21 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # include <_stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 # define LIBFT_H
 
 void	ft_bzero(void *s, int n);

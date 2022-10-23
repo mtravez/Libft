@@ -6,12 +6,11 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:59:45 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/19 18:03:17 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:16:06 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 //This function creates a new string from the string s from the index start
 //and then returns the pointer
@@ -27,7 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start = size;
 	sub = malloc(len + 1);
 	if (!sub)
-		return (0);
+		return (NULL);
 	ft_memcpy(sub, &s[start], len);
 	sub[len] = '\0';
 	return (sub);

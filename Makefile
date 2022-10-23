@@ -6,7 +6,7 @@
 #    By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 18:55:02 by mtravez           #+#    #+#              #
-#    Updated: 2022/10/22 19:59:50 by mtravez          ###   ########.fr        #
+#    Updated: 2022/10/23 18:33:05 by mtravez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,28 +54,22 @@ BONUS=ft_lstnew.c		\
 	ft_lstclear.c		\
 	ft_lstiter.c		\
 	ft_lstmap.c
+FLAGS= -Wall -Wextra -Werror
 
-all: $(NAME) bonus
-	@echo "Making a..out"
-	@gcc main.c -L. -lft
+all: $(NAME)
 
 $(NAME):
-	@echo "Archiving ..."
-	@gcc -c $(SRC) -Wall -Wextra -Werror
+	@gcc -c $(SRC) $(FLAGS)
 	@ar rc $(NAME) *.o
-	@echo "Done ;)"
 
 clean:
 	@echo "Cleaning *.o files."
-	@/bin/rm -f *.o
+	@rm -f *.o
 
 fclean: clean
-	@echo "cleaning libft.a and a.out"
-	@/bin/rm -f $(NAME) a.out
+	@rm -f $(NAME) a.out
 
 re: fclean all
-
 bonus:
-	@gcc -c $(BONUS) -Wall -Wextra -Werror
+	@gcc -c $(BONUS) $(FLAGS)
 	@ar rc $(NAME) *.o
-	@echo "Bonus functions"

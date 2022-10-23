@@ -6,12 +6,11 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:59:14 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/18 16:31:38 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:01:30 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 //This function creates a new string with the joint strings s1 and s2
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -25,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	sizes2 = ft_strlen(s2);
 	joint = malloc(sizes1 + sizes2 + 1);
 	if (!joint)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (i < sizes1)
 	{

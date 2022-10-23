@@ -6,12 +6,14 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:21:28 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/22 19:51:01 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 15:30:38 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//This function uses the del function in the content 
+//of every node in lst and frees the node
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*current;

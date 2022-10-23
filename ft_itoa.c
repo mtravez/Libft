@@ -6,12 +6,11 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 16:47:35 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/18 18:11:35 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 14:47:37 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 //This function counts how many digits are in an integer and returns the 
 //value, though it also will return 1 more if the int is negative
@@ -59,7 +58,7 @@ char	*ft_itoa(int n)
 	i = ft_count_digits(n);
 	number = malloc(sizeof(char) * i + 1);
 	if (!number)
-		return (0);
+		return (NULL);
 	div = ft_asign_neg(number, n);
 	number[i] = '\0';
 	i--;

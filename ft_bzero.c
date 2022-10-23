@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 16:55:27 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/17 15:03:21 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/23 17:04:09 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	ft_bzero(void *s, int n)
 	int		i;
 
 	if (n == 0)
-	{
 		return ;
-	}
 	t = (char *) s;
 	i = 0;
 	while (i < n)
