@@ -6,7 +6,7 @@
 #    By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 18:55:02 by mtravez           #+#    #+#              #
-#    Updated: 2022/10/23 19:22:21 by mtravez          ###   ########.fr        #
+#    Updated: 2022/10/25 12:09:21 by mtravez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ FLAGS= -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME):
-	@gcc -c $(SRC) $(FLAGS)
+	@cc -c $(SRC) $(FLAGS)
 	@ar rc $(NAME) *.o
 
 clean:
@@ -72,5 +72,5 @@ fclean: clean
 re: fclean all
 
 bonus:
-	@gcc -c $(BONUS) $(FLAGS)
+	@cc -c $(BONUS) $(FLAGS)
 	@ar rc $(NAME) *.o
