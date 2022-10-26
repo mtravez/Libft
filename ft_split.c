@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:38:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/26 15:09:51 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:15:29 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ static int	ft_how_many_elements(char const *s, char c)
 		if (s[i] != '\0')
 			i++;
 	}
-	if (count == 0 && s[0] != '\0' && s[0] != c)
-		count = 1;
 	return (count);
 }
 

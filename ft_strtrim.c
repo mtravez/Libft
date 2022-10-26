@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:46:12 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:03:15 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:21:47 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		k;
 
+	if (!s1)
+		return (NULL);
 	j = ft_strlen(s1);
 	i = 0;
 	while (isinset(set, s1[i]))

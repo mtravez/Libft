@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 12:59:14 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:01:30 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:26:10 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	sizes2;
 	size_t	i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	sizes1 = ft_strlen(s1);
 	sizes2 = ft_strlen(s2);
 	joint = malloc(sizes1 + sizes2 + 1);
 	if (!joint)
 		return (NULL);
-	i = 0;
-	while (i < sizes1)
-	{
-		joint[i] = s1[i];
-		i++;
-	}
+	joint = ft_memcpy(joint, s1, sizes1);
 	i = 0;
 	while (i < sizes2)
 	{

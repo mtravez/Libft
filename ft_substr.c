@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:59:45 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 19:28:10 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 20:20:00 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	size;
 
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s);
 	if (start > size)
 		return (ft_strdup(""));
