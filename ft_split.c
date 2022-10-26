@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:38:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:00:37 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:09:51 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 //This function skips all c characters dirctly after s[index] and returns
 //the first index where s[index] is not c. It also returns the same index if
 //c is the null character
-static int	ft_skip_chars(char const *s, char c, int index)
+static int	ft_skip_chars(char const *s, char c, int *index)
 {
 	if (c == '\0')
-		return (index);
-	while (s[index] == c)
-		index++;
-	return (index);
+		return (*index);
+	while (s[*index] == c)
+		(*index)++;
+	return (*index);
 }
 
 //This function skips all non-c characters directly after s[index] and returns
@@ -53,9 +53,23 @@ static int	ft_how_many_elements(char const *s, char c)
 		if (s[i] != '\0')
 			i++;
 	}
-	if (count == 0 && s[0] != '\0')
+	if (count == 0 && s[0] != '\0' && s[0] != c)
 		count = 1;
 	return (count);
+}
+
+static void	*ft_freestuff(char **arrarr)
+{
+	int	i;
+
+	i = 0;
+	while (arrarr[i] != 0)
+	{
+		free(arrarr[i]);
+		i++;
+	}
+	free(arrarr);
+	return (NULL);
 }
 
 //This function returns an array of strings of the string s that has been
@@ -67,19 +81,21 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 
+	if (!s)
+		return (NULL);
 	arrarr = malloc((ft_how_many_elements(s, c) + 1) * sizeof(char *));
 	if (!arrarr)
 		return (NULL);
-	i = ft_skip_chars(s, c, 0);
-	j = i;
+	i = 0;
+	j = ft_skip_chars(s, c, &i);
 	k = 0;
-	while (s[i] != '\0')
+	while (s[i] != 0)
 	{
 		i = ft_skip_non_chars(s, c, i);
 		arrarr[k] = ft_substr(s, j, i - j);
-		i = ft_skip_chars(s, c, i);
-		j = i;
-		k++;
+		if (arrarr[k++] == NULL)
+			return (ft_freestuff(arrarr));
+		j = ft_skip_chars(s, c, &i);
 		if (k > ft_how_many_elements(s, c) || ft_how_many_elements(s, c) == 1)
 			break ;
 	}

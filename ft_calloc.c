@@ -6,11 +6,12 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:08:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:12:39 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:03:31 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 //This function allocates enough space for count number of
 //objects of each size bytes of memory. It then fills the bytes 
@@ -24,7 +25,7 @@ void	*ft_calloc(size_t count, size_t size)
 		count = 1;
 		size = 1;
 	}
-	if (count * size == 0)
+	if (count * size == 0 || size > SIZE_T_MAX / count)
 		return (NULL);
 	mem = malloc(size * count);
 	if (!mem)

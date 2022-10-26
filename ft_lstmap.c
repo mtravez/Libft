@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 19:58:56 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:35:32 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/26 12:57:22 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*head;
 
-	if (!lst)
+	if (!lst || !del || !f)
 		return (NULL);
 	current = ft_lstnew(f(lst->content));
 	if (!current)
