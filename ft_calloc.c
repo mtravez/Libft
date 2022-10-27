@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 19:08:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/26 20:17:36 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/27 15:23:49 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*mem;
+	size_t	i;
 
-	if (count == 0 && size == 0)
-	{
-		count = 1;
-		size = 1;
-	}
-	if (count * size == 0 || size > SIZE_T_MAX / count)
+	i = count * size;
+	if (size && count != (i / size))
 		return (NULL);
 	mem = malloc(size * count);
 	if (!mem)

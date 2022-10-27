@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:44:15 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/26 20:35:57 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/27 17:16:06 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,32 @@ static int	is_whitespace(char c)
 		|| (c == '\v') || (c == '\f') || (c == '\r'));
 }
 
+//This function turns all digit characters into an integer and returns the 
+//result it also checks for the limits and does not allow the integer
+// to get pass these
+static long int	addnumber(long int number, int negative, char *str, int index)
+{
+	while (ft_isdigit(str[index]))
+	{
+		if (number * negative <= -922337203685477580 && str[index] > '7')
+			return (0);
+		if (number * negative >= 922337203685477580 && str[index] >= '7')
+			return (-1);
+		number = (number * 10) + (str[index] - '0');
+		index++;
+	}
+	return (number * negative);
+}
+
 //This function turns a character array into a number. It ignores
-//any white spaces previous to a  non-whitespace character and 
+//any white spaces previous to a non-whitespace character and 
 //takes the first positive/negative symbol into account for the integer.
 int	ft_atoi(const char *str)
 {
 	char			*newstr;
 	int				negative;
 	int				i;
-	unsigned int	number;
+	long int		number;
 
 	newstr = (char *) str;
 	number = 0;
@@ -44,10 +61,5 @@ int	ft_atoi(const char *str)
 			return (0);
 		i++;
 	}
-	while (ft_isdigit(newstr[i]))
-	{
-		number = (number * 10) + (newstr[i] - '0');
-		i++;
-	}
-	return (number * negative);
+	return (addnumber(number, negative, newstr, i));
 }
