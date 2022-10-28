@@ -6,11 +6,12 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 19:55:12 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:39:06 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/28 16:29:34 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 //This function writes in the file fd the given number by using recursion
 void	ft_putnbr_fd(int n, int fd)
@@ -20,6 +21,11 @@ void	ft_putnbr_fd(int n, int fd)
 	div = n;
 	if (n < 0)
 	{
+		if (n == INT_MIN)
+		{
+			ft_putstr_fd("-2147483648", fd);
+			return ;
+		}
 		ft_putchar_fd('-', fd);
 		div = -n;
 	}
