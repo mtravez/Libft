@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:01:53 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/26 11:57:47 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/27 19:04:59 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //This static function exists to needle in haystack only from the 
 //pos index
-int	check_word(char *haystack, char *needle, int pos, int len)
+static int	check_word(char *haystack, char *needle, int pos, int len)
 {
 	int	j;
 

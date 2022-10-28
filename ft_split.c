@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 19:38:55 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/26 20:15:29 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/27 19:04:29 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ static int	ft_how_many_elements(char const *s, char c)
 	return (count);
 }
 
+//This function frees an array and its content and returns null
 static void	*ft_freestuff(char **arrarr)
 {
 	int	i;
