@@ -6,11 +6,12 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 14:46:12 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/28 14:49:16 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/10/28 19:46:28 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 //This function returns whether or not the given char is in the given set
 static int	isinset(char const *set, char c)
@@ -43,10 +44,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (isinset(set, s1[i]))
 		i++;
-	while (isinset(set, s1[j - 1]))
+	while (j > i && isinset(set, s1[j - 1]))
 		j--;
 	k = j - i;
-	if (k <= 0)
+	if (k == 0)
 		return (ft_strdup(""));
 	trim = ft_substr(s1, i, k);
 	if (!trim)
