@@ -6,7 +6,7 @@
 /*   By: mtravez <mtravez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:12:15 by mtravez           #+#    #+#             */
-/*   Updated: 2022/10/23 15:06:21 by mtravez          ###   ########.fr       */
+/*   Updated: 2022/12/08 13:48:58 by mtravez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,28 @@
 # include <_stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 # define LIBFT_H
 
+// ft_printf
+int		ft_hexprint(unsigned int n, char uplo);
+int		ft_putstr(char *string);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+int		ft_put_unsigned(unsigned int n);
+int		ft_printf(const char *string, ...);
+int		ft_print_ptr(unsigned long long point);
+
+// get_next_line
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+
+//libft
 void	ft_bzero(void *s, int n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -50,6 +70,9 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
+
+//libft_bonus
 typedef struct s_list
 {
 	void			*content;
